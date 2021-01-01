@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cheatsheet}[2019/02/03 Cheatsheet Template]
 % !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
-\LoadClass[fontsize=7pt,a4paper,landscape]{scrartcl}
+\LoadClass[fontsize=7pt,a4paper]{scrartcl}
 
 
 \RequirePackage[english, ngerman]{babel}
@@ -25,40 +25,72 @@
 \RequirePackage{titlesec}
 \RequirePackage{parskip} 
 \RequirePackage{fancyhdr}
-\RequirePackage[backend=biber,maxbibnames=99,sorting=nty,hyperref=true,backref=true,]{biblatex}
+\RequirePackage{csquotes}
+\RequirePackage[backend=biber,maxbibnames=99,sorting=nty,hyperref=true,backref=true]{biblatex}
 
 \RequirePackage[breaklinks,pdfpagelabels,hidelinks]{hyperref}
 \RequirePackage{cleveref}
 \RequirePackage{siunitx}
 \makeatletter
-\tcbset{common/.style={colframe={#1!80},  colback={white},boxed title style={colback={#1!80}, }, sharp corners,size=small,halign=left,left=0mm,top=0mm,
-		bottom=0mm,right=0mm,boxsep=1mm,fonttitle=\bfseries}}
+\newcommand{\revisiondate}{\today}
+\newcommand{\revision}{Nicht versioniert}
+\tcbset{common/.style={colframe={#1!80},  
+		colback={white},
+		boxed title style={colback=#1!80},
+		sharp corners,
+		size=small,
+		halign=left,
+		left=0mm,
+		top=0mm,
+		bottom=0mm,
+		right=0mm,
+		boxsep=1mm,
+		fonttitle=\bfseries}
+	}
 \newtcolorbox[auto counter, number within=section]{normbox}[2][]{
-    common={gray!90!white}, title=#2,#1
+	common={gray!90!white}, 
+	title=#2,
+	#1
 }
 \newtcolorbox[auto counter, number within=section]{sectionbox}[2][]{
-    common={gray!90!white}, title=\subsection{#2},#1
-}  
+	common={gray!90!white}, 
+	title=\subsection{#2},
+	#1
+}
 \newtcolorbox[use counter from=sectionbox]{warningbox}[2][]{
- 	common={red!90!black}, enhanced jigsaw,
+	common={red!90!black}, 
+	enhanced jigsaw,
 	sharp corners,
 	boxrule=0pt,
-	toprule=1pt,bottomrule=1pt,
-	titlerule=0.1em,colback=red!5!white, title=#2,#1
+	toprule=1pt,
+	bottomrule=1pt,
+	titlerule=0.1em,
+	colback=red!5!white,
+	title=#2,
+	#1
 }  
 \newtcolorbox[use counter from=sectionbox]{symbolbox}[1][]{
-	common={orange!90!black},enhanced jigsaw,
+	common={orange!90!black},
+	enhanced jigsaw,
 	sharp corners,
 	boxrule=0pt,
-	toprule=1pt,bottomrule=1pt,
-	titlerule=0.1em,colback=orange!5!white,,#1
+	toprule=1pt,
+	bottomrule=1pt,
+	titlerule=0.1em,
+	colback=orange!5!white,
+	#1
 }  
 \newtcolorbox[use counter from=sectionbox]{hintbox}[2][]{
-    common={green!40!black},enhanced jigsaw,
+	common={green!40!black},
+	enhanced jigsaw,
 	sharp corners,
 	boxrule=0pt,
-	toprule=1pt,bottomrule=1pt,
-	titlerule=0.1em,colback=green!4!white, title=#2,#1
+	toprule=1pt,
+	bottomrule=1pt,
+	titlerule=0.1em,
+	colback=green!4!white,
+	title=#2,
+	#1
 }
 \newtcolorbox[use counter from=sectionbox]{tablebox}[2][]{
     common={blue!90!black},
