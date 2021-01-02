@@ -30,5 +30,5 @@ RUN tlmgr install titlesec koma-script listingsutf8 biber csquotes collection-la
     pip3 install pygments && \
     rm -f /usr/local/texlive/tlpkg/texlive.tlpdb.*
 
-COPY tex /root/texmf/tex
-
+COPY tex /usr/local/texlive/texmf-local/tex
+RUN mktexlsr
