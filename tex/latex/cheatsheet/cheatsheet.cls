@@ -92,14 +92,7 @@
 	title=#2,
 	#1
 }
-\newtcolorbox[use counter from=sectionbox]{tablebox}[2][]{
-    common={blue!90!black},
-    tabularx=#2,
-    colback=blue!5!white,
-    enhanced,
-    frame hidden,
-    skin=enhancedmiddle,borderline={0.75mm}{0mm}{blue},#1
-}
+
 \renewcommand{\title}[1]{%
 	  \gdef\@title{#1}%
 	  \gdef\thetitle{#1}
