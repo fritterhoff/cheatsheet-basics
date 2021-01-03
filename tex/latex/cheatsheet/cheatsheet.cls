@@ -18,6 +18,7 @@
 
 \RequirePackage[most,skins]{tcolorbox}
 \RequirePackage{lmodern}
+\RequirePackage{microtype}
 \RequirePackage{multicol}
 \RequirePackage{adjustbox}
 \RequirePackage{tabularx}
@@ -37,14 +38,10 @@
 \tcbset{common/.style={colframe={#1!80},  
 		colback={white},
 		boxed title style={colback=#1!80},
+		enhanced jigsaw,
 		sharp corners,
 		size=small,
 		halign=left,
-		left=0mm,
-		top=0mm,
-		bottom=0mm,
-		right=0mm,
-		boxsep=1mm,
 		fonttitle=\bfseries}
 	}
 \newtcolorbox[auto counter, number within=section]{normbox}[2][]{
@@ -59,35 +56,17 @@
 }
 \newtcolorbox[use counter from=sectionbox]{warningbox}[2][]{
 	common={red!90!black}, 
-	enhanced jigsaw,
-	sharp corners,
-	boxrule=0pt,
-	toprule=1pt,
-	bottomrule=1pt,
-	titlerule=0.1em,
 	colback=red!5!white,
 	title=#2,
 	#1
 }  
-\newtcolorbox[use counter from=sectionbox]{symbolbox}[1][]{
+\newtcolorbox[use counter from=sectionbox]{symbolbox}[1][]{	
 	common={orange!90!black},
-	enhanced jigsaw,
-	sharp corners,
-	boxrule=0pt,
-	toprule=1pt,
-	bottomrule=1pt,
-	titlerule=0.1em,
 	colback=orange!5!white,
 	#1
 }  
 \newtcolorbox[use counter from=sectionbox]{hintbox}[2][]{
 	common={green!40!black},
-	enhanced jigsaw,
-	sharp corners,
-	boxrule=0pt,
-	toprule=1pt,
-	bottomrule=1pt,
-	titlerule=0.1em,
 	colback=green!4!white,
 	title=#2,
 	#1
@@ -163,8 +142,9 @@
 \AtBeginDocument{
 	\fancyfoot[L]{Stand: \revisiondate \, (\textit{\revision})}
 	\fancyfoot[R]{\thepage/\pageref{LastPage}}
-    \begin{multicols*}{\value{columnnumber}}
-       \maketitle
+	\begin{multicols*}{\value{columnnumber}}
+		\raggedcolumns
+		\maketitle
 }
 \AtEndDocument{
     \label{LastPage}
