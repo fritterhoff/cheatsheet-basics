@@ -21,7 +21,7 @@ jobs:
       id: docker_meta
       uses: crazy-max/ghaction-docker-meta@v1
       with:
-        images: ghcr.io/flori-uni/cheatsheet-template-vs-code
+        images: ghcr.io/fritterhoff/cheatsheet-template-vs-code
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
