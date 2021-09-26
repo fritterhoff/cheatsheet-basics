@@ -6,7 +6,8 @@
 
 \RequirePackage[english, ngerman]{babel}
 \RequirePackage{geometry}
-\RequirePackage[utf8]{inputenc}		
+\RequirePackage[utf8]{inputenc}	
+\RequirePackage[utf8]{luainputenc}			
 \RequirePackage{multicol}			
 
 \RequirePackage{amsmath}
@@ -17,8 +18,6 @@
 \RequirePackage[cache=false]{minted}
 
 \RequirePackage[most,skins]{tcolorbox}
-\RequirePackage{lmodern}
-\RequirePackage{microtype}
 \RequirePackage{multicol}
 \RequirePackage{adjustbox}
 \RequirePackage{tabularx}
@@ -71,7 +70,6 @@
 	title=#2,
 	#1
 }
-
 \renewcommand{\title}[1]{%
 	  \gdef\@title{#1}%
 	  \gdef\thetitle{#1}
@@ -107,6 +105,11 @@
 \titlespacing{\paragraph}{0em}{0em}{-0.3em}
 
 \setlength{\parskip}{1pt}
+
+\RequirePackage{fontspec}
+\setmonofont{Fira Code}[
+  Contextuals=Alternate  % Activate the calt feature
+]
 \renewcommand{\familydefault}{\sfdefault}
 \renewcommand{\arraystretch}{1.2}
 
@@ -142,6 +145,9 @@
 \AtBeginDocument{
 	\fancyfoot[L]{Stand: \revisiondate \, (\textit{\revision})}
 	\fancyfoot[R]{\thepage/\pageref{LastPage}}
+	
+	\renewcommand\theFancyVerbLine{\footnotesize\arabic{FancyVerbLine}}
+	\setminted{numbersep=1px,fontsize=\footnotesize}
 	\begin{multicols*}{\value{columnnumber}}
 		\raggedcolumns
 		\maketitle
