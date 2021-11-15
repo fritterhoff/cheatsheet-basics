@@ -22,7 +22,7 @@ RUN tlmgr update --self && \
 
 FROM latex-slim
 
-RUN tlmgr install titlesec koma-script listingsutf8 biber csquotes luainputenc fontspec luatexbase collection-latex synctex catchfile latex-bin hyphen-german babel-german breakurl minted fvextra etoolbox fancyvrb upquote lineno ifplatform xstring xkeyval framed float tcolorbox pgf xcolor environ trimspaces l3kernel l3packages listings lm adjustbox collectbox parskip biblatex logreq makecell siunitx cleveref microtype && \
+RUN tlmgr install titlesec koma-script listingsutf8 biber csquotes luainputenc fontspec luatexbase collection-latex synctex catchfile latex-bin hyphen-german babel-german breakurl minted fvextra etoolbox fancyvrb upquote lineno ifplatform xstring xkeyval framed float tcolorbox pgf xcolor environ trimspaces caption cite ieeetran tex-gyre times psnfss algorithms l3kernel l3packages listings lm adjustbox collectbox parskip biblatex logreq makecell siunitx cleveref microtype && \
     apk add --no-cache python3 git fontconfig && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
