@@ -31,10 +31,10 @@ RUN tlmgr install titlesec koma-script listingsutf8 biber csquotes luainputenc f
     rm -f /usr/local/texlive/tlpkg/texlive.tlpdb.*
 
 COPY tex /usr/local/texlive/texmf-local/tex
-RUN wget https://github.com/tonsky/FiraCode/releases/download/5.2/Fira_Code_v5.2.zip && \
-    unzip Fira_Code_v5.2.zip -d Fira_Code_v5.2 && \
+RUN wget https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip && \
+    unzip Fira_Code_v6.2.zip -d Fira_Code_v6.2 && \
     mkdir -p /usr/share/fonts/truetype/FiraCode && \
-    cp Fira_Code_v5.2/ttf/*.ttf /usr/share/fonts/truetype/FiraCode && \
-    rm -rf Fira_Code_v5.2* && \
+    cp Fira_Code_v6.2/ttf/*.ttf /usr/share/fonts/truetype/FiraCode && \
+    rm -rf Fira_Code_v6.2* && \
     fc-cache -fv
 RUN mktexlsr

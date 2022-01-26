@@ -29,6 +29,9 @@
 \RequirePackage[backend=biber,maxbibnames=99,sorting=nty,hyperref=true,backref=true]{biblatex}
 
 \RequirePackage[breaklinks,pdfpagelabels,hidelinks]{hyperref}
+\hypersetup{pdfpagemode=UseNone,
+	pdffitwindow=true,     % window fit to page when opened
+}
 \RequirePackage{cleveref}
 \RequirePackage{siunitx}
 \makeatletter
