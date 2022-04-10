@@ -147,7 +147,7 @@
 \setlength{\columnseprule}{0.1pt}
 \AtBeginDocument{
 	\fancyfoot[L]{Stand: \revisiondate \, (\textit{\revision})}
-	\fancyfoot[R]{\thepage/\pageref{LastPage}}
+	\fancyfoot[R]{{\color{blue}\href{https://github.com/fritterhoff/sample-cheatsheet}{Vorlage auf GitHub}} - \thepage/\pageref{LastPage}}
 	
 	\renewcommand\theFancyVerbLine{\footnotesize\arabic{FancyVerbLine}}
 	\setminted{numbersep=1px,fontsize=\footnotesize}
