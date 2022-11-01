@@ -5,12 +5,13 @@ ENV LANG=C.UTF-8
 RUN apk add --no-cache make gcc musl-dev git 
 
 FROM alpine-glibc as latex-slim
+COPY tex-profile.txt /tmp/
 
 # set up packages
 RUN apk add --no-cache wget perl xz && \
     wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar -xzf install-tl-unx.tar.gz && \
-    install-tl-20*/install-tl --no-interaction && \
+    install-tl-20*/install-tl --profile=/tmp/tex-profile.txt && \
     rm -rf install-tl-* && \
     rm -f /usr/local/texlive/tlpkg/texlive.tlpdb.*
 
